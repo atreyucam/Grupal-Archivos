@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<DataSet1 xmlns="http://tempuri.org/DataSet1.xsd">
+  <TblDatos>
+    <Nombre>luis</Nombre>
+    <Apellido>insuasti</Apellido>
+    <Cedula>0600927654</Cedula>
+    <Ciudad>riobamba</Ciudad>
+    <Edad>22</Edad>
+    <Direccion>arupos del norte</Direccion>
+    <Fecha_x0020_>2000/04/23</Fecha_x0020_>
+    <Correo>luisisis@jsjs</Correo>
+    <Genero>masculino</Genero>
+    <Celular>0949828823</Celular>
+  </TblDatos>
+  <TblDatos>
+    <Nombre />
+    <Apellido />
+    <Cedula />
+    <Ciudad />
+    <Edad />
+    <Direccion />
+    <Fecha_x0020_ />
+    <Correo />
+    <Genero />
+    <Celular />
+  </TblDatos>
+  <TblDatos>
+    <Nombre>kevin</Nombre>
+    <Apellido>insuasti</Apellido>
+    <Cedula>12342323</Cedula>
+    <Ciudad>riobamba</Ciudad>
+    <Edad>23</Edad>
+    <Direccion>erer</Direccion>
+    <Fecha_x0020_>22233/858/555</Fecha_x0020_>
+    <Correo>luisssef</Correo>
+    <Genero>masculino</Genero>
+    <Celular>12342323</Celular>
+  </TblDatos>
+</DataSet1>

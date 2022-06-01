@@ -14,7 +14,7 @@ namespace Grupal_Archivos
     {
         //variables
         string fechaElaboracion, fechaCaducidad;
-
+        
         public FormProductos()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace Grupal_Archivos
             arrayProducto[0] = textBoxCodigo.Text;
             arrayProducto[1] = comboBoxTipo.Text;
             arrayProducto[2] = comboBoxSubtipo.Text;
-            arrayProducto[3] = textBoxMarca.Text;
+            arrayProducto[3] = comboBoxMarca.Text;
             arrayProducto[4] = textBoxNombre.Text;
             arrayProducto[5] = richTextBoxDescripcion.Text;
             arrayProducto[6] = textBoxStock.Text;
@@ -46,7 +46,6 @@ namespace Grupal_Archivos
         //--------------------------------------------------------------------
         //--- VALIDACIONES DEL FORM PRODUCTO 
         //--------------------------------------------------------------------
-
         //---Validacion del Codigo - texboxCodigo
         /*  Permite revisar en el dataset si existe ya el codigo.
          *  Permite comprobar que el codigo no supere los 6 digitos.
@@ -82,8 +81,8 @@ namespace Grupal_Archivos
                 return false;
             }
         }
-        //--------------------------------------------------------------------
 
+        //--------------------------------------------------------------------
         //---Validacion del tipo y subtipo - comboboxTipo y comboBoxSubtipo
         /*  Permite Seleccionar su subtipo dependiendo que tipo selccione.
          *  
@@ -91,17 +90,21 @@ namespace Grupal_Archivos
         private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxSubtipo.Text = "";
+            comboBoxMarca.Text = "";
             if (comboBoxTipo.Text == "CABELLO")
             {
                 itemsCabello();
+                itemsMarcaCabello();
             }
             else if (comboBoxTipo.Text == "ASEO BUCAL")
             {
                 itemsAseoBucal();
+                itemsMarcaAseoBucal();
             }
             else if (comboBoxTipo.Text == "ASEO CORPORAL")
             {
                 itemsAseoColporal();
+                itemsAseoCorporal();
             }
         }
         public void itemsCabello()
@@ -122,8 +125,8 @@ namespace Grupal_Archivos
             comboBoxSubtipo.Items.Add("Jabon");
             comboBoxSubtipo.Items.Add("Exfoliante");
         }
-        //--------------------------------------------------------------------
 
+        //--------------------------------------------------------------------
         //---Validacion del stock - textboxStock
         /*  Permite Ingresar solo numeros enteros positivos.
          *  Permite controlar el minimo que es 1.
@@ -152,8 +155,8 @@ namespace Grupal_Archivos
                 }
             }
         }
-        //--------------------------------------------------------------------
 
+        //--------------------------------------------------------------------
         //---Validacion del precio - textBoxPrecio
         /*  Permite controlar el ingreso del valor del producto.
          *  Solo acepta valores decimales superiores a 0.
@@ -181,6 +184,114 @@ namespace Grupal_Archivos
                 e.Handled = true;
                 MessageBox.Show("Solo puede ingresar un punto decimal.");
             }
+        }
+
+        //--------------------------------------------------------------------
+        //---Validacion del nombre - textBoxNombre
+        /*  Permite ingresar unicamente el nombre en mayusculas
+         * */
+        private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Char.ToUpper(e.KeyChar);
+        }
+
+        //--------------------------------------------------------------------
+        //---Validacion del descripcion - richTextBoxDescripcion
+        /*  Permite ingresar unicamente solo 100 caracteres
+         * */
+        ErrorProvider errorP = new ErrorProvider();
+
+        private void richTextBoxDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == (char)Keys.Enter) || (e.KeyChar == (char)Keys.Tab))
+            {
+                if (richTextBoxDescripcion.MaxLength >= 100)
+                {
+                    errorP.SetError(richTextBoxDescripcion, "No se admiten más palabras");
+                }
+            }
+        }
+
+        //--------------------------------------------------------------------
+        //---Validacion de la marca - comboBoxMarca
+        /*  Permite mostrar en una lista las marcas registradas, sino existe
+         *  lo guarda temporalmente en la lista para el resgistro de la marca.
+         * */
+
+        private void comboBoxMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Char.ToUpper(e.KeyChar);
+            if ((e.KeyChar == (char)Keys.Enter) || (e.KeyChar == (char)Keys.Tab))
+            {
+                if (comboBoxTipo.Text == "CABELLO")
+                {
+                    if (comprobarMarca(comboBoxMarca.Text) == false)
+                    {
+                        nuevaMarca(comboBoxMarca.Text);
+                    }
+                }
+                else if (comboBoxTipo.Text == "ASEO BUCAL")
+                {
+                    if (comprobarMarca(comboBoxMarca.Text) == false)
+                    {
+                        nuevaMarca(comboBoxMarca.Text);
+                    }
+                }
+                else if (comboBoxTipo.Text == "ASEO CORPORAL")
+                {
+                    if (comprobarMarca(comboBoxMarca.Text) == false)
+                    {
+                        nuevaMarca(comboBoxMarca.Text);
+                    }
+                }
+            }                     
+        }
+        public bool comprobarMarca(string valor)
+        {
+            int index = comboBoxMarca.FindString(valor);
+            if (index == 0)
+            {
+                MessageBox.Show("item encontrado");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Nueva marca registrada.");
+                return false;
+            }
+        }
+        public void nuevaMarca(string valor)
+        {
+            comboBoxMarca.Items.Add(valor);
+        }
+        public void itemsMarcaCabello()
+        {
+            comboBoxMarca.Items.Clear();
+            comboBoxMarca.Items.Add("AFRO LOVE");
+            comboBoxMarca.Items.Add("ANEA");
+            comboBoxMarca.Items.Add("REVLON");
+            comboBoxMarca.Items.Add("TAHE");
+            comboBoxMarca.Items.Add("WELLA");
+            comboBoxMarca.Items.Add("TIO NACHO");
+            comboBoxMarca.Items.Add("SIBEL");
+        }
+        public void itemsMarcaAseoBucal()
+        {
+            comboBoxMarca.Items.Clear();
+            comboBoxMarca.Items.Add("COLGATE");
+            comboBoxMarca.Items.Add("DIENTECITOS");
+            comboBoxMarca.Items.Add("LISTERINE");
+            comboBoxMarca.Items.Add("CLEANDENT");
+            comboBoxMarca.Items.Add("DENTALWASH");
+        }
+        public void itemsAseoCorporal()
+        {
+            comboBoxMarca.Items.Clear();
+            comboBoxMarca.Items.Add("CUERPITO");
+            comboBoxMarca.Items.Add("LIMPIOSANO");
+            comboBoxMarca.Items.Add("DOVE");
+            comboBoxMarca.Items.Add("SIBEL");
+            comboBoxMarca.Items.Add("WASHBODY");
         }
         //--------------------------------------------------------------------
 
