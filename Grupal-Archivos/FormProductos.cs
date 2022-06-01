@@ -122,7 +122,6 @@ namespace Grupal_Archivos
             comboBoxSubtipo.Items.Add("Jabon");
             comboBoxSubtipo.Items.Add("Exfoliante");
         }
-
         //--------------------------------------------------------------------
 
         //---Validacion del stock - textboxStock
@@ -151,6 +150,36 @@ namespace Grupal_Archivos
                         MessageBox.Show("El stock esta vacio. Consulte el proximo abastecimiento de stock");
                     }
                 }
+            }
+        }
+        //--------------------------------------------------------------------
+
+        //---Validacion del precio - textBoxPrecio
+        /*  Permite controlar el ingreso del valor del producto.
+         *  Solo acepta valores decimales superiores a 0.
+         * */
+        private void textBoxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+                MessageBox.Show("Caracter invalido, solo acepta valores enteros positivos.");
+            }
+            else
+            {
+                if ((e.KeyChar == (char)Keys.Enter) || (e.KeyChar == (char)Keys.Tab))
+                {
+                    if (Int32.Parse(textBoxPrecio.Text) < 1)
+                    {
+                        MessageBox.Show("Quiere poner gratis el producto? Usted esta loco?!");
+                    }
+                }
+            }
+            // Comprueba que no exista otro punto decimal.
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo puede ingresar un punto decimal.");
             }
         }
         //--------------------------------------------------------------------
