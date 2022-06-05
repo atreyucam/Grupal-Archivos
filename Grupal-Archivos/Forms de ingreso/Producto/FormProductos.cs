@@ -14,6 +14,7 @@ namespace Grupal_Archivos
     {
         //variables
         string fechaElaboracion, fechaCaducidad;
+        int posicion;
         
         public FormProductos()
         {
@@ -41,8 +42,8 @@ namespace Grupal_Archivos
             dataSetTienda1.TablaProductos.Rows.Add(arrayProducto);
             dataSetTienda1.WriteXml(Application.StartupPath + "datosTiendaAseoPersonal");
             MessageBox.Show("Producto registrado");
-
         }
+
         //--------------------------------------------------------------------
         //--- VALIDACIONES DEL FORM PRODUCTO 
         //--------------------------------------------------------------------
@@ -293,8 +294,103 @@ namespace Grupal_Archivos
             comboBoxMarca.Items.Add("SIBEL");
             comboBoxMarca.Items.Add("WASHBODY");
         }
+        
         //--------------------------------------------------------------------
+        public void contenido()
+        {
+            textBoxCodigo.Visible = false;
+            comboBoxTipo.Visible = false;
+            comboBoxSubtipo.Visible = false;
+            comboBoxMarca.Visible = false;
+            textBoxNombre.Visible = false;
+            richTextBoxDescripcion.Visible = false;
+            textBoxStock.Visible = false;
+            textBoxPrecio.Visible = false;
+            comboBoxDiaCaducidad.Visible = false;
+            comboBoxDiaElaboracion.Visible = false;
+            comboBoxMesCaducidad.Visible = false;
+            comboBoxMesElaboracion.Visible = false;
+            comboBoxYearCaducidad.Visible = false;
+            comboBoxYearElaboracion.Visible = false;
+            dataGridView1.Visible = false;
 
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+            label13.Visible = false;
+            label14.Visible = false;
+            label15.Visible = false;
+            label16.Visible = false;
+            label17.Visible = false;
+
+            buttonBuscar.Visible = false;
+            buttonGuardar.Visible = false;
+            buttonEditar.Visible = false;
+            buttonEliminar.Visible = false;
+        }
+
+        //--------------------------------------------------------------------
+        //Permite abrir una nueva ventana que permite buscar el producto.
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+
+            Form ventana;
+            ventana = new Forms_de_busqueda.FormBusquedaProductos();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+
+        //--------------------------------------------------------------------
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+            Form ventana;
+            ventana = new Forms_de_busqueda.FormBusquedaEliminarProducto();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+        //--------------------------------------------------------------------
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+            Form ventana;
+            ventana = new Forms_de_busqueda.FormBusquedaEditarProducto();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+        //--------------------------------------------------------------------
+       
     }
 
 }

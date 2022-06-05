@@ -54,34 +54,217 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetTienda.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FormClientes.cs">
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientes.Designer.cs">
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaCliente.Designer.cs">
+      <DependentUpon>FormBusquedaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaEditarCliente.Designer.cs">
+      <DependentUpon>FormBusquedaEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaEliminarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormBusquedaEliminarCliente.Designer.cs">
+      <DependentUpon>FormBusquedaEliminarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaEditarProducto.Designer.cs">
+      <DependentUpon>FormBusquedaEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaEliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaEliminarProducto.Designer.cs">
+      <DependentUpon>FormBusquedaEliminarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormBusquedaProductos.Designer.cs">
+      <DependentUpon>FormBusquedaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormMostrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Cliente\FormMostrarCliente.Designer.cs">
+      <DependentUpon>FormMostrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormMostrarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Producto\FormMostrarProducto.Designer.cs">
+      <DependentUpon>FormMostrarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaEditarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaEditarVendedor.Designer.cs">
+      <DependentUpon>FormBusquedaEditarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaEliminarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaEliminarVendedor.Designer.cs">
+      <DependentUpon>FormBusquedaEliminarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormBusquedaVendedor.Designer.cs">
+      <DependentUpon>FormBusquedaVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormMostrarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de busqueda\Vendedor\FormMostrarVendedor.Designer.cs">
+      <DependentUpon>FormMostrarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de ingreso\Cliente\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de ingreso\Cliente\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductos.cs">
+    <Compile Include="Forms de ingreso\Cliente\FormEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductos.Designer.cs">
+    <Compile Include="Forms de ingreso\Cliente\FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de ingreso\Producto\FormEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de ingreso\Producto\FormEditarProducto.Designer.cs">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de ingreso\Producto\FormProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de ingreso\Producto\FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu.cs">
+    <Compile Include="Forms de ingreso\Vendedor\FormEditarVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="Forms de ingreso\Vendedor\FormEditarVendedor.Designer.cs">
+      <DependentUpon>FormEditarVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms de ingreso\Vendedor\FormVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de ingreso\Vendedor\FormVendedor.Designer.cs">
+      <DependentUpon>FormVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormLoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormLoginAdmin.Designer.cs">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormLoginVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormLoginVendedor.Designer.cs">
+      <DependentUpon>FormLoginVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormMainLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormMainLogin.Designer.cs">
+      <DependentUpon>FormMainLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormRol.Designer.cs">
+      <DependentUpon>FormRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormClientes.resx">
+    <Compile Include="Ventanas de Usuario\FormInicioAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas de Usuario\FormInicioAdministrador.Designer.cs">
+      <DependentUpon>FormInicioAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas de Usuario\FormInicioVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas de Usuario\FormInicioVendedor.Designer.cs">
+      <DependentUpon>FormInicioVendedor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms de busqueda\Cliente\FormBusquedaCliente.resx">
+      <DependentUpon>FormBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Cliente\FormBusquedaEditarCliente.resx">
+      <DependentUpon>FormBusquedaEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Cliente\FormBusquedaEliminarCliente.resx">
+      <DependentUpon>FormBusquedaEliminarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Producto\FormBusquedaEditarProducto.resx">
+      <DependentUpon>FormBusquedaEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Producto\FormBusquedaEliminarProducto.resx">
+      <DependentUpon>FormBusquedaEliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Producto\FormBusquedaProductos.resx">
+      <DependentUpon>FormBusquedaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Cliente\FormMostrarCliente.resx">
+      <DependentUpon>FormMostrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Producto\FormMostrarProducto.resx">
+      <DependentUpon>FormMostrarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Vendedor\FormBusquedaEditarVendedor.resx">
+      <DependentUpon>FormBusquedaEditarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Vendedor\FormBusquedaEliminarVendedor.resx">
+      <DependentUpon>FormBusquedaEliminarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Vendedor\FormBusquedaVendedor.resx">
+      <DependentUpon>FormBusquedaVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de busqueda\Vendedor\FormMostrarVendedor.resx">
+      <DependentUpon>FormMostrarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de ingreso\Cliente\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductos.resx">
+    <EmbeddedResource Include="Forms de ingreso\Cliente\FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de ingreso\Producto\FormEditarProducto.resx">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de ingreso\Producto\FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms de ingreso\Vendedor\FormEditarVendedor.resx">
+      <DependentUpon>FormEditarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms de ingreso\Vendedor\FormVendedor.resx">
+      <DependentUpon>FormVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormLoginAdmin.resx">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormLoginVendedor.resx">
+      <DependentUpon>FormLoginVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormMainLogin.resx">
+      <DependentUpon>FormMainLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormRol.resx">
+      <DependentUpon>FormRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +275,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ventanas de Usuario\FormInicioAdministrador.resx">
+      <DependentUpon>FormInicioAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas de Usuario\FormInicioVendedor.resx">
+      <DependentUpon>FormInicioVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSetTienda.xsc">
       <DependentUpon>DataSetTienda.xsd</DependentUpon>
     </None>
@@ -116,5 +305,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,6 +17,7 @@ namespace Grupal_Archivos
         public FormClientes()
         {
             InitializeComponent();
+
             dataSetTienda1.ReadXml(Application.StartupPath + "datosTiendaAseoPersonal");
         }
 
@@ -24,9 +25,9 @@ namespace Grupal_Archivos
         {
             dataSetTienda1.WriteXml(Application.StartupPath + "datosTiendaAseoPersonal");
             object[] arrayCliente = new object[10];
-            arrayCliente[0] = txtNombre.Text;
-            arrayCliente[1] = txtApellido.Text;
-            arrayCliente[2] = txtCedula.Text;
+            arrayCliente[0] = txtCedula.Text;
+            arrayCliente[1] = txtNombre.Text;
+            arrayCliente[2] = txtApellido.Text;
             arrayCliente[3] = cmbCiudad.Text;
             arrayCliente[4] = cmbEdad.Text;
             arrayCliente[5] = txtDireccion.Text;
@@ -36,6 +37,7 @@ namespace Grupal_Archivos
             arrayCliente[9] = txtCedula.Text;
             dataSetTienda1.TablaClientes.Rows.Add(arrayCliente);
             dataSetTienda1.WriteXml(Application.StartupPath + "datosTiendaAseoPersonal");
+            MessageBox.Show("Cliente registrado");
         }
 
 
@@ -90,7 +92,7 @@ namespace Grupal_Archivos
         }
 
         //--------------------------------------------------------------------
-        //---Validacion de la Cedula - txtCedula
+        //---Validacion del Celular - txtCelular
         /*  Permite comprobar si el numero celular es valido.
          * */
         private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
@@ -136,6 +138,88 @@ namespace Grupal_Archivos
 
             }
         }
+
+        public void contenido()
+        {
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+            label13.Visible = false;
+            txtCedula.Visible = false;
+            txtNombre.Visible = false;
+            txtApellido.Visible = false;
+            cmbEdad.Visible = false;
+            txtFecha.Visible = false;
+            cmbCiudad.Visible = false;
+            txtDireccion.Visible = false;
+            cmbGenero.Visible = false;
+            txtCorreo.Visible = false;
+            txtCelular.Visible = false;
+            buttonBuscar.Visible = false;
+            buttonEliminar.Visible = false;
+            buttonGuardar.Visible = false;
+            dataGridView1.Visible = false;
+        }
+        //--------------------------------------------------------------------
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+            Form ventana;
+            ventana = new Forms_de_busqueda.Cliente.FormBusquedaEditarCliente();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+        //--------------------------------------------------------------------
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+            Form ventana;
+            ventana = new Forms_de_busqueda.Cliente.FormBusquedaEliminarCliente();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            contenido();
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+            Form ventana;
+            ventana = new Forms_de_busqueda.Cliente.FormBusquedaCliente();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+
         //--------------------------------------------------------------------
 
     }
