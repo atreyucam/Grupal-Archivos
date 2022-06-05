@@ -72,6 +72,22 @@ namespace Grupal_Archivos.Ventanas_de_Usuario
             this.Close();
         }
 
+        private void buttonReportes_Click(object sender, EventArgs e)
+        {
+            if (panelMain.Controls.Count > 0)
+            {
+                panelMain.Controls.RemoveAt(0);
+            }
+
+            Form ventana;
+            ventana = new Reportes.FormInicioReportes();
+            ventana.TopLevel = false;
+            ventana.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ventana);
+            panelMain.Tag = ventana;
+            ventana.Show();
+        }
+
         //---------------------------------------------------------------
     }
 }

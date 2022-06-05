@@ -15,7 +15,6 @@ namespace Grupal_Archivos.Login
         public FormMainLogin()
         {
             InitializeComponent();
-            dataSetTienda1.WriteXml(Application.StartupPath + "datosTiendaAseoPersonal");
             if (panelMain.Controls.Count > 0)
             {
                 panelMain.Controls.RemoveAt(0);

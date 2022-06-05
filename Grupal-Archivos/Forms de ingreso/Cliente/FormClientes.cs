@@ -31,7 +31,7 @@ namespace Grupal_Archivos
             arrayCliente[3] = cmbCiudad.Text;
             arrayCliente[4] = cmbEdad.Text;
             arrayCliente[5] = txtDireccion.Text;
-            arrayCliente[6] = txtFecha.Text;
+            arrayCliente[6] = textBoxfecha.Text;
             arrayCliente[7] = txtCorreo.Text;
             arrayCliente[8] = cmbGenero.Text;
             arrayCliente[9] = txtCedula.Text;
@@ -158,7 +158,7 @@ namespace Grupal_Archivos
             txtNombre.Visible = false;
             txtApellido.Visible = false;
             cmbEdad.Visible = false;
-            txtFecha.Visible = false;
+            textBoxfecha.Visible = false;
             cmbCiudad.Visible = false;
             txtDireccion.Visible = false;
             cmbGenero.Visible = false;

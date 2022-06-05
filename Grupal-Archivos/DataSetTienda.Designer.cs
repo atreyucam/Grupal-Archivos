@@ -735,7 +735,7 @@ namespace Grupal_Archivos {
             
             private global::System.Data.DataColumn columnDireccion;
             
-            private global::System.Data.DataColumn columnFecha_;
+            private global::System.Data.DataColumn columnFecha;
             
             private global::System.Data.DataColumn columnCorreo;
             
@@ -826,9 +826,9 @@ namespace Grupal_Archivos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Fecha_Column {
+            public global::System.Data.DataColumn FechaColumn {
                 get {
-                    return this.columnFecha_;
+                    return this.columnFecha;
                 }
             }
             
@@ -893,7 +893,7 @@ namespace Grupal_Archivos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TablaClientesRow AddTablaClientesRow(string Cedula, string Nombre, string Apellido, string Ciudad, string Edad, string Direccion, string Fecha_, string Correo, string Genero, string Celular) {
+            public TablaClientesRow AddTablaClientesRow(string Cedula, string Nombre, string Apellido, string Ciudad, string Edad, string Direccion, string Fecha, string Correo, string Genero, string Celular) {
                 TablaClientesRow rowTablaClientesRow = ((TablaClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Cedula,
@@ -902,7 +902,7 @@ namespace Grupal_Archivos {
                         Ciudad,
                         Edad,
                         Direccion,
-                        Fecha_,
+                        Fecha,
                         Correo,
                         Genero,
                         Celular};
@@ -934,7 +934,7 @@ namespace Grupal_Archivos {
                 this.columnCiudad = base.Columns["Ciudad"];
                 this.columnEdad = base.Columns["Edad"];
                 this.columnDireccion = base.Columns["Direccion"];
-                this.columnFecha_ = base.Columns["Fecha "];
+                this.columnFecha = base.Columns["Fecha"];
                 this.columnCorreo = base.Columns["Correo"];
                 this.columnGenero = base.Columns["Genero"];
                 this.columnCelular = base.Columns["Celular"];
@@ -955,8 +955,8 @@ namespace Grupal_Archivos {
                 base.Columns.Add(this.columnEdad);
                 this.columnDireccion = new global::System.Data.DataColumn("Direccion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDireccion);
-                this.columnFecha_ = new global::System.Data.DataColumn("Fecha ", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
                 this.columnCorreo = new global::System.Data.DataColumn("Correo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCorreo);
                 this.columnGenero = new global::System.Data.DataColumn("Genero", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1838,17 +1838,17 @@ namespace Grupal_Archivos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Fecha_ {
+            public string Fecha {
                 get {
                     try {
-                        return ((string)(this[this.tableTablaClientes.Fecha_Column]));
+                        return ((string)(this[this.tableTablaClientes.FechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha \' in table \'TablaClientes\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'TablaClientes\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTablaClientes.Fecha_Column] = value;
+                    this[this.tableTablaClientes.FechaColumn] = value;
                 }
             }
             
@@ -1974,14 +1974,14 @@ namespace Grupal_Archivos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFecha_Null() {
-                return this.IsNull(this.tableTablaClientes.Fecha_Column);
+            public bool IsFechaNull() {
+                return this.IsNull(this.tableTablaClientes.FechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFecha_Null() {
-                this[this.tableTablaClientes.Fecha_Column] = global::System.Convert.DBNull;
+            public void SetFechaNull() {
+                this[this.tableTablaClientes.FechaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

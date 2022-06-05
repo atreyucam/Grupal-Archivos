@@ -54,7 +54,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -71,6 +70,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxfecha = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientesBindingSource)).BeginInit();
@@ -80,6 +80,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelMain.Controls.Add(this.textBoxfecha);
             this.panelMain.Controls.Add(this.buttonEditar);
             this.panelMain.Controls.Add(this.buttonEliminar);
             this.panelMain.Controls.Add(this.dataGridView1);
@@ -91,7 +92,6 @@
             this.panelMain.Controls.Add(this.txtApellido);
             this.panelMain.Controls.Add(this.txtCelular);
             this.panelMain.Controls.Add(this.txtCorreo);
-            this.panelMain.Controls.Add(this.txtFecha);
             this.panelMain.Controls.Add(this.txtDireccion);
             this.panelMain.Controls.Add(this.txtCedula);
             this.panelMain.Controls.Add(this.txtNombre);
@@ -384,15 +384,6 @@
             this.txtCorreo.Size = new System.Drawing.Size(205, 26);
             this.txtCorreo.TabIndex = 19;
             // 
-            // txtFecha
-            // 
-            this.txtFecha.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtFecha.Location = new System.Drawing.Point(544, 212);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(172, 26);
-            this.txtFecha.TabIndex = 18;
-            this.txtFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFecha_KeyPress);
-            // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(544, 273);
@@ -558,6 +549,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DATOS DEL CLIENTE:";
             // 
+            // textBoxfecha
+            // 
+            this.textBoxfecha.Location = new System.Drawing.Point(544, 212);
+            this.textBoxfecha.Name = "textBoxfecha";
+            this.textBoxfecha.Size = new System.Drawing.Size(186, 26);
+            this.textBoxfecha.TabIndex = 30;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -588,7 +586,6 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtNombre;
@@ -620,5 +617,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn celularDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBoxfecha;
     }
 }
