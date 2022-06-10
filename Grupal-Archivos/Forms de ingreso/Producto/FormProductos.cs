@@ -22,6 +22,26 @@ namespace Grupal_Archivos
             dataSetTienda1.ReadXml(Application.StartupPath + "datosTiendaAseoPersonal");
 
         }
+
+        public void limpiar()
+        {
+            textBoxCodigo.Clear();
+            comboBoxTipo.Text = "";
+            comboBoxSubtipo.Text = "";
+            comboBoxMarca.Text = "";
+            textBoxNombre.Clear();
+            richTextBoxDescripcion.Clear();
+            textBoxStock.Clear();
+            comboBoxDiaCaducidad.Text = "";
+            comboBoxDiaElaboracion.Text = "";
+            comboBoxMesCaducidad.Text = "";
+            comboBoxMesElaboracion.Text = "";
+            comboBoxYearCaducidad.Text = "";
+            comboBoxYearElaboracion.Text = "";
+            textBoxPrecio.Clear();
+        }
+
+
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             fechaElaboracion = comboBoxDiaElaboracion.Text +"/"+ comboBoxMesElaboracion.Text + "/"+ comboBoxYearElaboracion.Text;
@@ -42,6 +62,7 @@ namespace Grupal_Archivos
             dataSetTienda1.TablaProductos.Rows.Add(arrayProducto);
             dataSetTienda1.WriteXml(Application.StartupPath + "datosTiendaAseoPersonal");
             MessageBox.Show("Producto registrado");
+            limpiar();
         }
 
         //--------------------------------------------------------------------
