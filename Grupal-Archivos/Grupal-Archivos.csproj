@@ -168,6 +168,12 @@
     <Compile Include="Forms de ingreso\Producto\FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms de ingreso\RelacionVenta\FormGenerarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de ingreso\RelacionVenta\FormGenerarVenta.Designer.cs">
+      <DependentUpon>FormGenerarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms de ingreso\Vendedor\FormEditarVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,17 +224,41 @@
     <Compile Include="Reportes\FormReporteClientes.Designer.cs">
       <DependentUpon>FormReporteClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormReporteEdadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteEdadCliente.Designer.cs">
+      <DependentUpon>FormReporteEdadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReporteFueraStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteFueraStock.Designer.cs">
+      <DependentUpon>FormReporteFueraStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FormReporteProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\FormReporteProductos.Designer.cs">
       <DependentUpon>FormReporteProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormReporteProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteProductosVendidos.Designer.cs">
+      <DependentUpon>FormReporteProductosVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\FormReporteVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\FormReporteVendedores.Designer.cs">
       <DependentUpon>FormReporteVendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FromReportePromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FromReportePromocion.Designer.cs">
+      <DependentUpon>FromReportePromocion.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Ventanas de Usuario\FormInicioAdministrador.cs">
@@ -291,6 +321,9 @@
     <EmbeddedResource Include="Forms de ingreso\Producto\FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms de ingreso\RelacionVenta\FormGenerarVenta.resx">
+      <DependentUpon>FormGenerarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms de ingreso\Vendedor\FormEditarVendedor.resx">
       <DependentUpon>FormEditarVendedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +350,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\FormInicioReportes.resx">
       <DependentUpon>FormInicioReportes.cs</DependentUpon>
@@ -324,15 +358,31 @@
     <EmbeddedResource Include="Reportes\FormReporteClientes.resx">
       <DependentUpon>FormReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteEdadCliente.resx">
+      <DependentUpon>FormReporteEdadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteFueraStock.resx">
+      <DependentUpon>FormReporteFueraStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteProductos.resx">
       <DependentUpon>FormReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteProductosVendidos.resx">
+      <DependentUpon>FormReporteProductosVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReporteVendedores.resx">
       <DependentUpon>FormReporteVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FromReportePromocion.resx">
+      <DependentUpon>FromReportePromocion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEdadClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\reporteFueraStock.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePromocion.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteVendedores.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportProductosVendidos.rdlc" />
     <EmbeddedResource Include="Ventanas de Usuario\FormInicioAdministrador.resx">
       <DependentUpon>FormInicioAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,6 +415,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\articulos-de-aseo %281%29.png" />
+    <Content Include="Assets\articulos-de-aseo.png" />
+    <Content Include="Assets\reporte-de-negocios.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

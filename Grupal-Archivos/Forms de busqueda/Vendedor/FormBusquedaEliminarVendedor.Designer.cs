@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.labelSubtitulo = new System.Windows.Forms.Label();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.dataSetTienda = new Grupal_Archivos.DataSetTienda();
-            this.tablaVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +39,15 @@
             this.celularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablaVendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetTienda = new Grupal_Archivos.DataSetTienda();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.labelSubtitulo = new System.Windows.Forms.Label();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.labelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVendedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -65,64 +65,12 @@
             this.correoDataGridViewTextBoxColumn,
             this.generoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tablaVendedorBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 269);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 175);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1094, 488);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 317);
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Location = new System.Drawing.Point(529, 203);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(112, 35);
-            this.buttonBuscar.TabIndex = 22;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // labelSubtitulo
-            // 
-            this.labelSubtitulo.AutoSize = true;
-            this.labelSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubtitulo.Location = new System.Drawing.Point(332, 143);
-            this.labelSubtitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelSubtitulo.Name = "labelSubtitulo";
-            this.labelSubtitulo.Size = new System.Drawing.Size(90, 29);
-            this.labelSubtitulo.TabIndex = 21;
-            this.labelSubtitulo.Text = "Cedula";
-            // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(467, 143);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(272, 26);
-            this.textBoxCodigo.TabIndex = 20;
-            // 
-            // labelTitulo
-            // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(184, 41);
-            this.labelTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(798, 55);
-            this.labelTitulo.TabIndex = 19;
-            this.labelTitulo.Text = "Busqueda elimacion de Vendedores";
-            // 
-            // dataSetTienda
-            // 
-            this.dataSetTienda.DataSetName = "DataSetTienda";
-            this.dataSetTienda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tablaVendedorBindingSource
-            // 
-            this.tablaVendedorBindingSource.DataMember = "TablaVendedor";
-            this.tablaVendedorBindingSource.DataSource = this.dataSetTienda;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -196,22 +144,71 @@
             this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
             this.generoDataGridViewTextBoxColumn.Width = 150;
             // 
+            // tablaVendedorBindingSource
+            // 
+            this.tablaVendedorBindingSource.DataMember = "TablaVendedor";
+            this.tablaVendedorBindingSource.DataSource = this.dataSetTienda;
+            // 
+            // dataSetTienda
+            // 
+            this.dataSetTienda.DataSetName = "DataSetTienda";
+            this.dataSetTienda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(353, 132);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 22;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // labelSubtitulo
+            // 
+            this.labelSubtitulo.AutoSize = true;
+            this.labelSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubtitulo.Location = new System.Drawing.Point(221, 93);
+            this.labelSubtitulo.Name = "labelSubtitulo";
+            this.labelSubtitulo.Size = new System.Drawing.Size(59, 20);
+            this.labelSubtitulo.TabIndex = 21;
+            this.labelSubtitulo.Text = "Cedula";
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(311, 93);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(183, 20);
+            this.textBoxCodigo.TabIndex = 20;
+            // 
+            // labelTitulo
+            // 
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(123, 27);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(530, 37);
+            this.labelTitulo.TabIndex = 19;
+            this.labelTitulo.Text = "Busqueda elimacion de Vendedores";
+            // 
             // FormBusquedaEliminarVendedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 798);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(764, 519);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.labelSubtitulo);
             this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.labelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBusquedaEliminarVendedor";
             this.Text = "FormBusquedaEliminarVendedor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVendedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

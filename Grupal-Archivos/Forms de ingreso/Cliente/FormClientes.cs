@@ -31,7 +31,7 @@ namespace Grupal_Archivos
             arrayCliente[3] = cmbCiudad.Text;
             arrayCliente[4] = cmbEdad.Text;
             arrayCliente[5] = txtDireccion.Text;
-            arrayCliente[6] = textBoxfecha.Text;
+            arrayCliente[6] = "";
             arrayCliente[7] = txtCorreo.Text;
             arrayCliente[8] = cmbGenero.Text;
             arrayCliente[9] = txtCedula.Text;
@@ -78,18 +78,109 @@ namespace Grupal_Archivos
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
             {
-                e.Handled = true;
-                var rgx = new Regex(@"^[0-9]{10}$");
-                if (rgx.IsMatch(txtCedula.Text))
+                //e.Handled = true;
+                //var rgx = new Regex(@"^[0-9]{10}$");
+                //if (rgx.IsMatch(txtCedula.Text))
+                //{
+                //    MessageBox.Show("Cedula Ecuatoriana");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("La cedula ingresada no es correcta.");
+                //}
+            }
+
+            int[] vector = new int[10];
+            int[] array = new int[10];
+            int residuo = 0, digVer = 0, producto = 0;
+            string cedula;
+            char a, b;
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
                 {
-                    MessageBox.Show("Cedula Ecuatoriana");
-                }
-                else
-                {
-                    MessageBox.Show("La cedula ingresada no es correcta.");
+                    cedula = txtCedula.Text;
+                    if (cedula.Length > 10)
+                    {
+
+                        cedula = "";
+                        txtCedula.Text = null;
+                        txtCedula.Focus();
+
+                    }
+                    if ((cedula != "0000000000"))
+                    {
+                        a = cedula[0];
+                        b = cedula[1];
+                        char letra;
+                        for (int i = 0; i < 10; i++)
+                        {
+                            letra = cedula[i];
+                            vector[i] = int.Parse(letra.ToString());
+                        }
+                        for (int i = 0; i < 10; i++)
+                        {
+                            cedula += vector[i].ToString();
+                        }
+                        for (int i = 0; i < 9; i++)
+                        {
+                            if (i % 2 == 0)
+                            { //impares
+                                array[i] = vector[i] * 2;
+                                if (array[i] > 9)
+                                {
+                                    array[i] -= 9;
+                                }
+                            }
+                            else
+                            {
+                                array[i] = vector[i] * 1;
+                            }
+                            producto += array[i];
+                        }
+                        residuo = producto % 10;
+                        if (residuo == 0)
+                        {
+                            digVer = residuo;
+                        }
+                        else
+                        {
+                            digVer = 10 - residuo;
+                        }
+                        if (vector[9] == digVer)
+                        {
+                            MessageBox.Show("Cédula verificada");
+                            cmbCiudad.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Al parecer su cédula no existe, ingrese nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            cedula = "";
+                            txtCedula.Text = null;
+                            txtCedula.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ingresado solo ceros, no es válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cedula = "";
+                        txtCedula.Text = null;
+                        txtCedula.Focus();
+
+                    }
                 }
             }
+            catch (Exception er)
+            {
+                MessageBox.Show("No se pueden ingresar más de 10 digitos, letras, elementos en blanco, números negativos o cédulas incompletas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                txtCedula.Text = null;
+                txtCedula.Focus();
+
+            }
         }
+
 
         //--------------------------------------------------------------------
         //---Validacion del Celular - txtCelular
@@ -150,7 +241,6 @@ namespace Grupal_Archivos
             label7.Visible = false;
             label8.Visible = false;
             label9.Visible = false;
-            label10.Visible = false;
             label11.Visible = false;
             label12.Visible = false;
             label13.Visible = false;
@@ -158,7 +248,6 @@ namespace Grupal_Archivos
             txtNombre.Visible = false;
             txtApellido.Visible = false;
             cmbEdad.Visible = false;
-            textBoxfecha.Visible = false;
             cmbCiudad.Visible = false;
             txtDireccion.Visible = false;
             cmbGenero.Visible = false;
@@ -219,8 +308,37 @@ namespace Grupal_Archivos
             panelMain.Tag = ventana;
             ventana.Show();
         }
-
         //--------------------------------------------------------------------
-
-    }
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string correo;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    correo = txtCorreo.Text;
+                    if (!validarEmail(correo))
+                    {
+                        MessageBox.Show("El correo no es valido");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El correo valido");
+                        txtCelular.Focus();
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error inesperado");
+                }
+            }
+        }
+        public static bool validarEmail(string Correo)
+        {
+            return Correo != null && Regex.IsMatch(Correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+        //--------------------------------------------------------------------
+    }   
 }
+
+

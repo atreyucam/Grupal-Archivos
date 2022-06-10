@@ -34,5 +34,29 @@ namespace Grupal_Archivos.Reportes
             FormReporteClientes reporteClientes = new FormReporteClientes();
             reporteClientes.ShowDialog();
         }
+
+        private void buttonReporteProVendidos_Click(object sender, EventArgs e)
+        {
+            FormReporteProductosVendidos productosVendidos = new FormReporteProductosVendidos();
+            productosVendidos.ShowDialog(); 
+        }
+
+        private void buttonReportePromocion_Click(object sender, EventArgs e)
+        {
+            FromReportePromocion reportePromocion = new FromReportePromocion();
+            reportePromocion.ShowDialog();
+        }
+
+        private void buttonReporteFueraStock_Click(object sender, EventArgs e)
+        {
+            FormReporteFueraStock reporteFueraStock = new FormReporteFueraStock();
+            reporteFueraStock.ShowDialog();
+        }
+
+        private void buttonClienteEdad_Click(object sender, EventArgs e)
+        {
+            FormReporteEdadCliente edadCliente = new FormReporteEdadCliente();
+            edadCliente.ShowDialog();
+        }
     }
 }

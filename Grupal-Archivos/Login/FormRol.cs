@@ -42,7 +42,7 @@ namespace Grupal_Archivos.Login
                 panelRoles.Controls.RemoveAt(0);
             }
             Form ventana;
-            ventana = new FormLoginAdmin();
+            ventana = new FormLoginVendedor();
             ventana.TopLevel = false;
             ventana.Dock = DockStyle.Fill;
             panelRoles.Controls.Add(ventana);

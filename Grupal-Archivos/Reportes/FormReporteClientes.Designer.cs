@@ -30,12 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSetTienda = new Grupal_Archivos.DataSetTienda();
             this.tablaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).BeginInit();
+            this.dataSetTienda = new Grupal_Archivos.DataSetTienda();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tablaClientesBindingSource
+            // 
+            this.tablaClientesBindingSource.DataMember = "TablaClientes";
+            this.tablaClientesBindingSource.DataSource = this.dataSetTienda;
+            // 
+            // dataSetTienda
+            // 
+            this.dataSetTienda.DataSetName = "DataSetTienda";
+            this.dataSetTienda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -45,32 +55,24 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Grupal_Archivos.Reportes.ReporteClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1243, 975);
+            this.reportViewer1.Size = new System.Drawing.Size(1170, 887);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dataSetTienda
-            // 
-            this.dataSetTienda.DataSetName = "DataSetTienda";
-            this.dataSetTienda.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tablaClientesBindingSource
-            // 
-            this.tablaClientesBindingSource.DataMember = "TablaClientes";
-            this.tablaClientesBindingSource.DataSource = this.dataSetTienda;
             // 
             // FormReporteClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 975);
+            this.ClientSize = new System.Drawing.Size(1170, 887);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormReporteClientes";
             this.Text = "FormReporteClientes";
             this.Load += new System.EventHandler(this.FormReporteClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetTienda)).EndInit();
             this.ResumeLayout(false);
 
         }
